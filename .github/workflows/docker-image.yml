@@ -1,16 +1,10 @@
-name: HTML - Docker Image CI
+name: Docker Image CI - HTML
 
 on:
-  workflow_dispatch:
-
   push:
     branches: [ "master" ]
-    paths:
-      - 'html/**'
   pull_request:
     branches: [ "master" ]
-    paths:
-      - 'html/**'
 
 jobs:
 
@@ -18,11 +12,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:    
-    - uses: actions/checkout@v4    
-    
+    steps:
+    - uses: actions/checkout@v4
     - name: Build the Docker image
       run: |
-        cd html
-        docker build . --file Dockerfile --tag cr.jedlik.cloud/html-Krupanszky-Marcell:0.1             
-        docker push cr.jedlik.cloud/html-Krupanszky-Marcell:0.1
+        docker build . --file Dockerfile --tag cr.jedlik.cloud/html-krupanszky:0.1
+        docker push cr.jedlik.cloud/html-krupanszky:0.1
+        
