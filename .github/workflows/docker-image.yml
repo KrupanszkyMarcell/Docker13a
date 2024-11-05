@@ -2,9 +2,9 @@ name: Docker Image CI - HTML
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
 
@@ -16,6 +16,6 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: |
-        docker build . --file Dockerfile --tag cr.jedlik.cloud/html-krupanszky:0.1
-        docker push cr.jedlik.cloud/html-krupanszky:0.1
+        docker build ../html --file Dockerfile --tag cr.jedlik.cloud/html_krupanszky:0.1
+        docker push cr.jedlik.cloud/html_krupanszky:0.1
         
