@@ -17,5 +17,6 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build . --file Dockerfile --tag ghcr.io/krupanszkymarcell/html:0.1
+        docker login ghcr.io -u krupanszkymarcell -p ${{secrets.ghcrtoken}}
         docker push ghcr.io/krupanszkymarcell/html:0.1
         
