@@ -9,6 +9,8 @@ on:
       -"html/**"
   pull_request:
     branches: [ "main" ]
+    paths:
+      -"html/**"
 
 jobs:
 
