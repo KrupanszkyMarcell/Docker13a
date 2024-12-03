@@ -4,9 +4,11 @@ on:
   workflow_dispatch:
 
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
+    paths:
+      -"html/**"
   pull_request:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
 
