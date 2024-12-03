@@ -29,6 +29,6 @@ jobs:
         cd html
         docker build . --file Dockerfile --tag ghcr.io/krupanszkymarcell/web-test-azure:$IMAGE_TAG --tag ghcr.io/krupanszkymarcell/web-test-azure:latest
         docker login ghcr.io -u bognarpal -p ${{secrets.GHCRTOKEN}}
-        docker push ghcr.io/bognarpal/test-azure-webapp:$IMAGE_TAG
-        docker push ghcr.io/bognarpal/test-azure-webapp:latest
+        docker push ghcr.io/krupanszkymarcell/web-test-azure:$IMAGE_TAG
+        docker push ghcr.io/krupanszkymarcell/web-test-azure:latest
         
