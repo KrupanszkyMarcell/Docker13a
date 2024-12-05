@@ -31,4 +31,13 @@ jobs:
         docker login ghcr.io -u bognarpal -p ${{secrets.GHCRTOKEN}}
         docker push ghcr.io/krupanszkymarcell/web-test-azure:$IMAGE_TAG
         docker push ghcr.io/krupanszkymarcell/web-test-azure:latest
+
         
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'Teszt-13A-A'
+        slot-name: 'production'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_463762c231044e6c821d7ed3e9cebbaf }}
+        images: 'ghcr.io/krupanszkymarcell/web-test-azure:${{ env.IMAGE_TAG }}'
